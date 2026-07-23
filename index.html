@@ -4,7 +4,11 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>שי ששונקר · יועץ מכירות צאנגאן חיפה</title>
-<meta name="description" content="שי ששונקר — יועץ מכירות צאנגאן ודיפאל בחיפה. דרך יפו 145, חיפה. DEEPAL 07 | DEEPAL S05">
+<meta name="description" content="שי ששונקר — יועץ מכירות צאנגאן ודיפאל בחיפה. דרך יפו 145, חיפה. DEEPAL S07 | DEEPAL S05">
+<meta property="og:title" content="שי ששונקר · יועץ מכירות צאנגאן חיפה">
+<meta property="og:description" content="DEEPAL S07 | DEEPAL S05 — אולם תצוגה צאנגאן חיפה, דרך יפו 145">
+<meta property="og:image" content="assets/hero.webp">
+<link rel="preload" as="image" href="assets/hero.webp">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;600;800;900&display=swap" rel="stylesheet">
@@ -22,36 +26,60 @@
   html{scroll-behavior:smooth}
   body{
     font-family:'Heebo',sans-serif;
-    background:
-      radial-gradient(1200px 600px at 85% -10%, rgba(46,124,246,.28), transparent 60%),
-      radial-gradient(900px 500px at 0% 110%, rgba(46,124,246,.18), transparent 55%),
-      linear-gradient(160deg, var(--night) 0%, var(--deep) 100%);
+    background:linear-gradient(160deg, var(--night) 0%, var(--deep) 100%);
     color:var(--ink);
     min-height:100vh;
     overflow-x:hidden;
   }
   .wrap{max-width:1000px;margin:0 auto;padding:0 22px}
 
-  /* ===== hero ===== */
-  header{position:relative;padding:72px 0 40px}
+  /* ===== hero with photo ===== */
+  .hero{
+    position:relative;
+    min-height:min(88vh,720px);
+    display:flex;align-items:flex-end;
+    isolation:isolate;
+    overflow:hidden;
+  }
+  .hero-bg{
+    position:absolute;inset:0;z-index:-2;
+    background:url("assets/hero.webp") center 35%/cover no-repeat;
+    animation:heroIn 1.6s ease-out both;
+  }
+  @keyframes heroIn{
+    from{transform:scale(1.06);opacity:.4}
+    to{transform:scale(1);opacity:1}
+  }
+  .hero-tint{
+    position:absolute;inset:0;z-index:-1;
+    background:
+      linear-gradient(to top, var(--night) 4%, rgba(5,15,38,.82) 30%, rgba(5,15,38,.28) 62%, rgba(5,15,38,.45) 100%),
+      linear-gradient(105deg, rgba(5,15,38,.62) 0%, transparent 55%);
+  }
+  .hero .wrap{width:100%;padding-top:120px;padding-bottom:56px}
   .watermark{
-    position:absolute;inset-inline-start:-2%;top:8px;
+    position:absolute;inset-inline-start:-1%;top:22px;z-index:-1;
     font-weight:900;font-size:clamp(70px,14vw,150px);letter-spacing:.06em;
-    color:transparent;-webkit-text-stroke:1px rgba(127,184,255,.14);
+    color:transparent;-webkit-text-stroke:1px rgba(127,184,255,.22);
     user-select:none;pointer-events:none;direction:ltr;
   }
   .eyebrow{
     display:inline-flex;align-items:center;gap:10px;
     color:var(--glow);font-weight:600;font-size:15px;letter-spacing:.04em;
     margin-bottom:14px;
+    text-shadow:0 1px 8px rgba(5,15,38,.8);
   }
   .eyebrow::before{content:"";width:34px;height:2px;background:linear-gradient(90deg,var(--electric),transparent);border-radius:2px}
   h1{
     font-size:clamp(42px,8vw,74px);font-weight:900;line-height:1.05;
     background:linear-gradient(120deg,#FFFFFF 30%,var(--glow) 100%);
     -webkit-background-clip:text;background-clip:text;color:transparent;
+    filter:drop-shadow(0 2px 14px rgba(5,15,38,.9));
   }
-  .tagline{margin-top:14px;color:var(--muted);font-size:18px;font-weight:300;max-width:34ch}
+  .tagline{
+    margin-top:14px;color:#C6D8F5;font-size:18px;font-weight:300;max-width:36ch;
+    text-shadow:0 1px 10px rgba(5,15,38,.85);
+  }
 
   /* ===== contact buttons ===== */
   .actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:30px}
@@ -59,43 +87,42 @@
     display:inline-flex;align-items:center;gap:9px;
     padding:13px 22px;border-radius:14px;text-decoration:none;
     font-weight:600;font-size:16px;color:var(--ink);
-    background:rgba(255,255,255,.05);
-    border:1px solid rgba(127,184,255,.25);
+    background:rgba(5,15,38,.55);
+    backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);
+    border:1px solid rgba(127,184,255,.3);
     transition:transform .18s ease, background .18s ease, border-color .18s ease;
   }
-  .btn:hover{transform:translateY(-2px);background:rgba(46,124,246,.18);border-color:var(--glow)}
-  .btn.primary{background:linear-gradient(120deg,var(--electric),#1B5FD0);border-color:transparent;box-shadow:0 8px 24px rgba(46,124,246,.35)}
+  .btn:hover{transform:translateY(-2px);background:rgba(46,124,246,.28);border-color:var(--glow)}
+  .btn.primary{background:linear-gradient(120deg,var(--electric),#1B5FD0);border-color:transparent;box-shadow:0 8px 24px rgba(46,124,246,.45)}
   .btn.primary:hover{background:linear-gradient(120deg,#3D8BFF,var(--electric))}
   .btn svg{width:19px;height:19px;flex:none}
   .btn:focus-visible{outline:2px solid var(--glow);outline-offset:3px}
 
   /* ===== cars ===== */
-  .models{padding:34px 0 10px}
+  .models{padding:48px 0 10px}
   .models h2{font-size:15px;font-weight:600;color:var(--glow);letter-spacing:.08em;margin-bottom:18px}
   .grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}
   .car{
     position:relative;border-radius:20px;overflow:hidden;
     background:linear-gradient(170deg,var(--panel),#0A1E44);
     border:1px solid rgba(127,184,255,.18);
-    transition:transform .22s ease, box-shadow .22s ease;
+    transition:transform .22s ease, box-shadow .22s ease, border-color .22s ease;
   }
-  .car:hover{transform:translateY(-4px);box-shadow:0 18px 40px rgba(3,10,30,.55)}
+  .car:hover{transform:translateY(-4px);box-shadow:0 18px 40px rgba(3,10,30,.55);border-color:rgba(127,184,255,.4)}
+  .car .frame{aspect-ratio:16/10;overflow:hidden;background:#081A3C}
   .car .photo{
-    aspect-ratio:16/9;width:100%;display:block;object-fit:cover;
-    background:
-      radial-gradient(400px 180px at 70% 20%, rgba(127,184,255,.25), transparent 70%),
-      linear-gradient(160deg,#123469,#081A3C);
+    width:100%;height:100%;display:block;object-fit:cover;
+    transition:transform .5s ease;
   }
-  .car .ph{
-    aspect-ratio:16/9;display:flex;align-items:center;justify-content:center;
-    background:
-      radial-gradient(400px 180px at 70% 20%, rgba(127,184,255,.25), transparent 70%),
-      linear-gradient(160deg,#123469,#081A3C);
-    color:rgba(234,242,255,.5);font-weight:800;font-size:26px;letter-spacing:.14em;direction:ltr;
-  }
+  .car:hover .photo{transform:scale(1.05)}
   .car .info{padding:18px 20px 20px}
   .car .name{font-weight:800;font-size:22px;direction:ltr;text-align:right}
   .car .desc{color:var(--muted);font-size:15px;margin-top:6px;font-weight:300}
+  .car .cta{
+    display:inline-flex;align-items:center;gap:6px;
+    margin-top:14px;color:var(--glow);font-weight:600;font-size:15px;text-decoration:none;
+  }
+  .car .cta:hover{text-decoration:underline}
 
   /* ===== footer ===== */
   footer{padding:44px 0 56px;color:var(--muted);font-size:15px}
@@ -107,18 +134,21 @@
 
   @media (max-width:640px){
     .grid{grid-template-columns:1fr}
-    header{padding-top:56px}
+    .hero{min-height:78vh}
+    .hero .wrap{padding-top:90px}
   }
   @media (prefers-reduced-motion:reduce){
-    *{transition:none !important}
+    *{transition:none !important;animation:none !important}
   }
 </style>
 </head>
 <body>
 
-<header>
+<header class="hero">
+  <div class="hero-bg" role="img" aria-label="DEEPAL S05 על כביש הרים"></div>
+  <div class="hero-tint"></div>
+  <div class="watermark">DEEPAL</div>
   <div class="wrap">
-    <div class="watermark">DEEPAL</div>
     <div class="eyebrow">CHANGAN · DEEPAL · חיפה</div>
     <h1>שי ששונקר</h1>
     <p class="tagline">יועץ מכירות צאנגאן חיפה — מלווה אתכם אישית עד הרכב החשמלי הבא שלכם.</p>
@@ -149,19 +179,23 @@
     <h2>הדגמים באולם התצוגה</h2>
     <div class="grid">
       <article class="car">
-        <img class="photo" src="assets/deepal-07.jpg" alt="DEEPAL 07"
-             onerror="this.outerHTML='&lt;div class=&quot;ph&quot;&gt;DEEPAL 07&lt;/div&gt;'">
+        <div class="frame">
+          <img class="photo" src="assets/deepal-s07.jpg" alt="DEEPAL S07" loading="lazy">
+        </div>
         <div class="info">
           <div class="name">DEEPAL S07</div>
           <p class="desc">קרוסאובר חשמלי — טווח נסיעה 475 ק"מ (WLTP), תאוצה 0-100 קמ"ש ב-7.9 שניות, מסך מולטימדיה 15.6", דירוג בטיחות 5 כוכבים ב-EURO NCAP.</p>
+          <a class="cta" href="https://wa.me/972545366498?text=%D7%94%D7%99%D7%99%20%D7%A9%D7%99%2C%20%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%AA%D7%90%D7%9D%20%D7%A0%D7%A1%D7%99%D7%A2%D7%AA%20%D7%9E%D7%91%D7%97%D7%9F%20%D7%91-DEEPAL%20S07" target="_blank" rel="noopener">לתיאום נסיעת מבחן ←</a>
         </div>
       </article>
       <article class="car">
-        <img class="photo" src="assets/deepal-05.jpg" alt="DEEPAL S05"
-             onerror="this.outerHTML='&lt;div class=&quot;ph&quot;&gt;DEEPAL 05&lt;/div&gt;'">
+        <div class="frame">
+          <img class="photo" src="assets/deepal-s05.jpg" alt="DEEPAL S05" loading="lazy">
+        </div>
         <div class="info">
           <div class="name">DEEPAL S05 EV</div>
           <p class="desc">רכב פנאי חשמלי — טווח נסיעה עד 485 ק"מ (WLTP), תאוצה 0-100 קמ"ש ב-7.5 שניות, טעינה מהירה מ-30% ל-80% ב-15 דקות, מסך מולטימדיה 15.4".</p>
+          <a class="cta" href="https://wa.me/972545366498?text=%D7%94%D7%99%D7%99%20%D7%A9%D7%99%2C%20%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%AA%D7%90%D7%9D%20%D7%A0%D7%A1%D7%99%D7%A2%D7%AA%20%D7%9E%D7%91%D7%97%D7%9F%20%D7%91-DEEPAL%20S05" target="_blank" rel="noopener">לתיאום נסיעת מבחן ←</a>
         </div>
       </article>
     </div>
