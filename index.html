@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>שי ששונקר · יועץ מכירות צאנגאן חיפה</title>
+<meta name="description" content="שי ששונקר — יועץ מכירות צאנגאן ודיפאל בחיפה. דרך יפו 145, חיפה. DEEPAL 07 | DEEPAL S05">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;600;800;900&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --night:#050F26;
+    --deep:#0A1E44;
+    --panel:#0E2A5C;
+    --electric:#2E7CF6;
+    --glow:#7FB8FF;
+    --ink:#EAF2FF;
+    --muted:#93A9CF;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    font-family:'Heebo',sans-serif;
+    background:
+      radial-gradient(1200px 600px at 85% -10%, rgba(46,124,246,.28), transparent 60%),
+      radial-gradient(900px 500px at 0% 110%, rgba(46,124,246,.18), transparent 55%),
+      linear-gradient(160deg, var(--night) 0%, var(--deep) 100%);
+    color:var(--ink);
+    min-height:100vh;
+    overflow-x:hidden;
+  }
+  .wrap{max-width:1000px;margin:0 auto;padding:0 22px}
+
+  /* ===== hero ===== */
+  header{position:relative;padding:72px 0 40px}
+  .watermark{
+    position:absolute;inset-inline-start:-2%;top:8px;
+    font-weight:900;font-size:clamp(70px,14vw,150px);letter-spacing:.06em;
+    color:transparent;-webkit-text-stroke:1px rgba(127,184,255,.14);
+    user-select:none;pointer-events:none;direction:ltr;
+  }
+  .eyebrow{
+    display:inline-flex;align-items:center;gap:10px;
+    color:var(--glow);font-weight:600;font-size:15px;letter-spacing:.04em;
+    margin-bottom:14px;
+  }
+  .eyebrow::before{content:"";width:34px;height:2px;background:linear-gradient(90deg,var(--electric),transparent);border-radius:2px}
+  h1{
+    font-size:clamp(42px,8vw,74px);font-weight:900;line-height:1.05;
+    background:linear-gradient(120deg,#FFFFFF 30%,var(--glow) 100%);
+    -webkit-background-clip:text;background-clip:text;color:transparent;
+  }
+  .tagline{margin-top:14px;color:var(--muted);font-size:18px;font-weight:300;max-width:34ch}
+
+  /* ===== contact buttons ===== */
+  .actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:30px}
+  .btn{
+    display:inline-flex;align-items:center;gap:9px;
+    padding:13px 22px;border-radius:14px;text-decoration:none;
+    font-weight:600;font-size:16px;color:var(--ink);
+    background:rgba(255,255,255,.05);
+    border:1px solid rgba(127,184,255,.25);
+    transition:transform .18s ease, background .18s ease, border-color .18s ease;
+  }
+  .btn:hover{transform:translateY(-2px);background:rgba(46,124,246,.18);border-color:var(--glow)}
+  .btn.primary{background:linear-gradient(120deg,var(--electric),#1B5FD0);border-color:transparent;box-shadow:0 8px 24px rgba(46,124,246,.35)}
+  .btn.primary:hover{background:linear-gradient(120deg,#3D8BFF,var(--electric))}
+  .btn svg{width:19px;height:19px;flex:none}
+  .btn:focus-visible{outline:2px solid var(--glow);outline-offset:3px}
+
+  /* ===== cars ===== */
+  .models{padding:34px 0 10px}
+  .models h2{font-size:15px;font-weight:600;color:var(--glow);letter-spacing:.08em;margin-bottom:18px}
+  .grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+  .car{
+    position:relative;border-radius:20px;overflow:hidden;
+    background:linear-gradient(170deg,var(--panel),#0A1E44);
+    border:1px solid rgba(127,184,255,.18);
+    transition:transform .22s ease, box-shadow .22s ease;
+  }
+  .car:hover{transform:translateY(-4px);box-shadow:0 18px 40px rgba(3,10,30,.55)}
+  .car .photo{
+    aspect-ratio:16/9;width:100%;display:block;object-fit:cover;
+    background:
+      radial-gradient(400px 180px at 70% 20%, rgba(127,184,255,.25), transparent 70%),
+      linear-gradient(160deg,#123469,#081A3C);
+  }
+  .car .ph{
+    aspect-ratio:16/9;display:flex;align-items:center;justify-content:center;
+    background:
+      radial-gradient(400px 180px at 70% 20%, rgba(127,184,255,.25), transparent 70%),
+      linear-gradient(160deg,#123469,#081A3C);
+    color:rgba(234,242,255,.5);font-weight:800;font-size:26px;letter-spacing:.14em;direction:ltr;
+  }
+  .car .info{padding:18px 20px 20px}
+  .car .name{font-weight:800;font-size:22px;direction:ltr;text-align:right}
+  .car .desc{color:var(--muted);font-size:15px;margin-top:6px;font-weight:300}
+
+  /* ===== footer ===== */
+  footer{padding:44px 0 56px;color:var(--muted);font-size:15px}
+  footer .line{display:flex;align-items:center;gap:9px;margin-top:6px}
+  footer a{color:var(--glow);text-decoration:none}
+  footer a:hover{text-decoration:underline}
+  footer svg{width:17px;height:17px;flex:none;color:var(--glow)}
+  .rule{height:1px;background:linear-gradient(90deg,rgba(127,184,255,.35),transparent);margin-bottom:22px}
+
+  @media (max-width:640px){
+    .grid{grid-template-columns:1fr}
+    header{padding-top:56px}
+  }
+  @media (prefers-reduced-motion:reduce){
+    *{transition:none !important}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <div class="watermark">DEEPAL</div>
+    <div class="eyebrow">CHANGAN · DEEPAL · חיפה</div>
+    <h1>שי ששונקר</h1>
+    <p class="tagline">יועץ מכירות צאנגאן חיפה — מלווה אתכם אישית עד הרכב החשמלי הבא שלכם.</p>
+
+    <div class="actions">
+      <a class="btn primary" href="tel:+972545366498">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        054-5366498
+      </a>
+      <a class="btn" href="https://wa.me/972545366498" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.5 14.4c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.65.07-.3-.15-1.26-.46-2.4-1.48-.89-.79-1.49-1.77-1.66-2.07-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.07-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.8.37-.27.3-1.04 1.02-1.04 2.5 0 1.47 1.07 2.9 1.22 3.1.15.2 2.11 3.22 5.1 4.51.71.31 1.27.49 1.7.63.72.23 1.37.2 1.88.12.57-.09 1.76-.72 2.01-1.42.25-.7.25-1.29.17-1.42-.07-.12-.27-.2-.57-.35zM12.05 21.8h-.01a9.87 9.87 0 0 1-5.03-1.38l-.36-.21-3.74.98 1-3.65-.24-.37a9.85 9.85 0 0 1-1.51-5.26c0-5.45 4.44-9.88 9.9-9.88a9.83 9.83 0 0 1 7 2.9 9.83 9.83 0 0 1 2.89 7c0 5.45-4.44 9.88-9.9 9.88zm8.42-18.3A11.8 11.8 0 0 0 12.05 0C5.5 0 .16 5.33.16 11.9c0 2.1.55 4.14 1.6 5.95L.07 24l6.3-1.65a11.9 11.9 0 0 0 5.68 1.45h.01c6.55 0 11.89-5.33 11.89-11.9 0-3.18-1.24-6.16-3.48-8.4z"/></svg>
+        וואטסאפ
+      </a>
+      <a class="btn" href="mailto:shai.sasonker@aev.co.il">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></svg>
+        אימייל
+      </a>
+      <a class="btn" href="https://waze.com/ul?q=%D7%93%D7%A8%D7%9A%20%D7%99%D7%A4%D7%95%20145%20%D7%97%D7%99%D7%A4%D7%94&navigate=yes" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/></svg>
+        ניווט לאולם
+      </a>
+    </div>
+  </div>
+</header>
+
+<section class="models">
+  <div class="wrap">
+    <h2>הדגמים באולם התצוגה</h2>
+    <div class="grid">
+      <article class="car">
+        <img class="photo" src="assets/deepal-07.jpg" alt="DEEPAL 07"
+             onerror="this.outerHTML='&lt;div class=&quot;ph&quot;&gt;DEEPAL 07&lt;/div&gt;'">
+        <div class="info">
+          <div class="name">DEEPAL S07</div>
+          <p class="desc">קרוסאובר חשמלי — טווח נסיעה 475 ק"מ (WLTP), תאוצה 0-100 קמ"ש ב-7.9 שניות, מסך מולטימדיה 15.6", דירוג בטיחות 5 כוכבים ב-EURO NCAP.</p>
+        </div>
+      </article>
+      <article class="car">
+        <img class="photo" src="assets/deepal-05.jpg" alt="DEEPAL S05"
+             onerror="this.outerHTML='&lt;div class=&quot;ph&quot;&gt;DEEPAL 05&lt;/div&gt;'">
+        <div class="info">
+          <div class="name">DEEPAL S05 EV</div>
+          <p class="desc">רכב פנאי חשמלי — טווח נסיעה עד 485 ק"מ (WLTP), תאוצה 0-100 קמ"ש ב-7.5 שניות, טעינה מהירה מ-30% ל-80% ב-15 דקות, מסך מולטימדיה 15.4".</p>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="rule"></div>
+    <div class="line">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/></svg>
+      אולם תצוגה צאנגאן חיפה · דרך יפו 145, חיפה
+    </div>
+    <div class="line">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></svg>
+      <a href="mailto:shai.sasonker@aev.co.il">shai.sasonker@aev.co.il</a>
+    </div>
+    <div class="line">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+      <a href="tel:+972545366498">054-5366498</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
