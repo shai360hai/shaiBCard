@@ -124,6 +124,43 @@
   }
   .car .cta:hover{text-decoration:underline}
 
+  /* ===== reviews ===== */
+  .reviews{padding:44px 0 10px}
+  .reviews h2{font-size:15px;font-weight:600;color:var(--glow);letter-spacing:.08em;margin-bottom:6px}
+  .reviews .sub{color:var(--muted);font-size:15px;font-weight:300;margin-bottom:20px}
+  .rev-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+  .rev-col{
+    border-radius:20px;padding:20px 22px;
+    background:linear-gradient(170deg,rgba(14,42,92,.55),rgba(10,30,68,.55));
+    border:1px solid rgba(127,184,255,.18);
+  }
+  .rev-col .model{font-weight:800;font-size:19px;direction:ltr;text-align:right;margin-bottom:12px}
+  .rev-list{list-style:none}
+  .rev-list li{margin-top:10px}
+  .rev-list a{
+    display:flex;align-items:center;gap:10px;
+    color:var(--ink);text-decoration:none;font-size:15px;
+    padding:10px 12px;border-radius:12px;
+    background:rgba(255,255,255,.04);
+    border:1px solid rgba(127,184,255,.12);
+    transition:background .18s ease, border-color .18s ease, transform .18s ease;
+  }
+  .rev-list a:hover{background:rgba(46,124,246,.16);border-color:var(--glow);transform:translateY(-1px)}
+  .rev-list svg{width:18px;height:18px;flex:none;color:var(--glow)}
+  .rev-list .yt svg{color:#FF5C5C}
+  .rev-list .src{color:var(--muted);font-size:13px;margin-inline-start:auto;flex:none}
+
+  /* ===== visit counter ===== */
+  .counter{
+    display:inline-flex;align-items:center;gap:8px;
+    margin-top:18px;padding:8px 14px;border-radius:999px;
+    background:rgba(255,255,255,.04);
+    border:1px solid rgba(127,184,255,.15);
+    font-size:14px;color:var(--muted);
+  }
+  .counter b{color:var(--glow);font-weight:600}
+  .counter[hidden]{display:none}
+
   /* ===== footer ===== */
   footer{padding:44px 0 56px;color:var(--muted);font-size:15px}
   footer .line{display:flex;align-items:center;gap:9px;margin-top:6px}
@@ -202,6 +239,58 @@
   </div>
 </section>
 
+<section class="reviews">
+  <div class="wrap">
+    <h2>מה כותבים בתקשורת</h2>
+    <p class="sub">מבחני דרכים וסיקורים של אתרי הרכב המובילים בישראל</p>
+    <div class="rev-grid">
+
+      <div class="rev-col">
+        <div class="model">DEEPAL S07</div>
+        <ul class="rev-list">
+          <li><a href="https://www.auto.co.il/articles/test-drives/road-tests/137799/" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+            מבחן דרכים מלא<span class="src">אוטו</span></a></li>
+          <li><a href="https://cars.walla.co.il/item/3714664" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+            מבחן וחוות דעת · ציון 8/10<span class="src">וואלה רכב</span></a></li>
+          <li><a href="https://www.queenoftheroad.co.il/%D7%A6%D7%90%D7%A0%D7%92%D7%9F-%D7%93%D7%99%D7%A4%D7%90%D7%9C-s07-%D7%9E%D7%91%D7%97%D7%9F/" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+            סקירה וחוות דעת<span class="src">מלכת הכביש</span></a></li>
+          <li><a class="yt" href="https://www.youtube.com/watch?v=CB7pAZD3ThQ" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.6A3 3 0 0 0 .5 6.2 31 31 0 0 0 0 12a31 31 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.6 9.4.6 9.4.6s7.5 0 9.4-.6a3 3 0 0 0 2.1-2.1A31 31 0 0 0 24 12a31 31 0 0 0-.5-5.8zM9.6 15.6V8.4L15.8 12l-6.2 3.6z"/></svg>
+            מבחן דרכים בווידאו<span class="src">YouTube</span></a></li>
+        </ul>
+      </div>
+
+      <div class="rev-col">
+        <div class="model">DEEPAL S05</div>
+        <ul class="rev-list">
+          <li><a href="https://www.auto.co.il/articles/test-drives/road-tests/deepal-s05/" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+            מבחן דרכים מלא<span class="src">אוטו</span></a></li>
+          <li><a href="https://cars.walla.co.il/item/3800582" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+            מבחן וחוות דעת מלאה<span class="src">וואלה רכב</span></a></li>
+          <li><a href="https://www.queenoftheroad.co.il/%D7%A6%D7%90%D7%A0%D7%92%D7%9F-%D7%93%D7%99%D7%A4%D7%90%D7%9C-s05-%D7%9E%D7%91%D7%97%D7%9F-%D7%93%D7%A8%D7%9B%D7%99%D7%9D/" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+            סקירה וחוות דעת<span class="src">מלכת הכביש</span></a></li>
+          <li><a class="yt" href="https://www.youtube.com/watch?v=b5-Tj3o9HV4" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.6A3 3 0 0 0 .5 6.2 31 31 0 0 0 0 12a31 31 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.6 9.4.6 9.4.6s7.5 0 9.4-.6a3 3 0 0 0 2.1-2.1A31 31 0 0 0 24 12a31 31 0 0 0-.5-5.8zM9.6 15.6V8.4L15.8 12l-6.2 3.6z"/></svg>
+            מבחן דרכים בווידאו<span class="src">YouTube</span></a></li>
+          <li><a class="yt" href="https://www.youtube.com/watch?v=qUAngj1voyU" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.6A3 3 0 0 0 .5 6.2 31 31 0 0 0 0 12a31 31 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.6 9.4.6 9.4.6s7.5 0 9.4-.6a3 3 0 0 0 2.1-2.1A31 31 0 0 0 24 12a31 31 0 0 0-.5-5.8zM9.6 15.6V8.4L15.8 12l-6.2 3.6z"/></svg>
+            כל מה שחשוב לדעת<span class="src">YouTube</span></a></li>
+          <li><a class="yt" href="https://www.youtube.com/watch?v=dvW6VBBinrw" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.6A3 3 0 0 0 .5 6.2 31 31 0 0 0 0 12a31 31 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.6 9.4.6 9.4.6s7.5 0 9.4-.6a3 3 0 0 0 2.1-2.1A31 31 0 0 0 24 12a31 31 0 0 0-.5-5.8zM9.6 15.6V8.4L15.8 12l-6.2 3.6z"/></svg>
+            סקירת וידאו נוספת<span class="src">YouTube</span></a></li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</section>
+
 <footer>
   <div class="wrap">
     <div class="rule"></div>
@@ -217,8 +306,33 @@
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
       <a href="tel:+972545366498">054-5366498</a>
     </div>
+    <div class="counter" id="visit-counter" hidden>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:16px;height:16px;color:var(--glow)"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+      <span><b id="visit-count">—</b> ביקורים באתר</span>
+    </div>
   </div>
 </footer>
+
+<script>
+(function(){
+  var el = document.getElementById('visit-counter');
+  var num = document.getElementById('visit-count');
+  // סופרים ביקור אחד לכל מבקר ביום (לא כל רענון)
+  var today = new Date().toISOString().slice(0,10);
+  var counted = localStorage.getItem('sbc-visit') === today;
+  var url = 'https://api.counterapi.dev/v1/shaibcard-haifa/visits/' + (counted ? '' : 'up');
+  fetch(url)
+    .then(function(r){ return r.json(); })
+    .then(function(d){
+      var c = d.count != null ? d.count : (d.data && d.data.count);
+      if (c == null) return;
+      num.textContent = Number(c).toLocaleString('he-IL');
+      el.hidden = false;
+      if (!counted) localStorage.setItem('sbc-visit', today);
+    })
+    .catch(function(){ /* אם השירות לא זמין — פשוט לא מציגים */ });
+})();
+</script>
 
 </body>
 </html>
