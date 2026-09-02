@@ -4,9 +4,9 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>שי ששונקר · יועץ מכירות צאנגאן חיפה</title>
-<meta name="description" content="שי ששונקר — יועץ מכירות צאנגאן ודיפאל בחיפה. דרך יפו 145, חיפה. DEEPAL S07 | DEEPAL S05">
+<meta name="description" content="שי ששונקר — יועץ מכירות צאנגאן ודיפאל בחיפה. דרך יפו 145, חיפה. DEEPAL S07 | DEEPAL S05 EV | DEEPAL S05 PHEV">
 <meta property="og:title" content="שי ששונקר · יועץ מכירות צאנגאן חיפה">
-<meta property="og:description" content="DEEPAL S07 | DEEPAL S05 — אולם תצוגה צאנגאן חיפה, דרך יפו 145">
+<meta property="og:description" content="DEEPAL S07 | DEEPAL S05 EV | DEEPAL S05 PHEV — אולם תצוגה צאנגאן חיפה, דרך יפו 145">
 <meta property="og:image" content="assets/hero.webp">
 <link rel="preload" as="image" href="assets/hero.webp">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -101,7 +101,18 @@
   /* ===== cars ===== */
   .models{padding:48px 0 10px}
   .models h2{font-size:15px;font-weight:600;color:var(--glow);letter-spacing:.08em;margin-bottom:18px}
-  .grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+  .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+  .car .badge{
+    position:absolute;top:14px;inset-inline-start:14px;z-index:1;
+    padding:5px 11px;border-radius:999px;font-size:13px;font-weight:600;
+    background:rgba(5,15,38,.72);color:var(--glow);
+    border:1px solid rgba(127,184,255,.35);backdrop-filter:blur(6px);
+  }
+  .car .specs{list-style:none;margin-top:12px;display:grid;grid-template-columns:1fr 1fr;gap:6px 12px}
+  .car .specs li{font-size:13px;color:var(--muted);font-weight:300;line-height:1.35}
+  .car .specs b{display:block;color:var(--ink);font-weight:600;font-size:15px;direction:ltr;text-align:right;unicode-bidi:isolate}
+  .car .price{margin-top:12px;font-size:14px;color:#C6D8F5}
+  .car .price b{color:var(--glow);font-weight:600}
   .car{
     position:relative;border-radius:20px;overflow:hidden;
     background:linear-gradient(170deg,var(--panel),#0A1E44);
@@ -169,8 +180,32 @@
   footer svg{width:17px;height:17px;flex:none;color:var(--glow)}
   .rule{height:1px;background:linear-gradient(90deg,rgba(127,184,255,.35),transparent);margin-bottom:22px}
 
+  /* ===== stats ===== */
+  .stats{padding:44px 0 10px}
+  .stats h2{font-size:15px;font-weight:600;color:var(--glow);letter-spacing:.08em;margin-bottom:6px}
+  .stats .sub{color:var(--muted);font-size:15px;font-weight:300;margin-bottom:20px;max-width:60ch}
+  .stat-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+  .stat{
+    border-radius:20px;padding:22px 20px 18px;
+    background:linear-gradient(170deg,rgba(14,42,92,.55),rgba(10,30,68,.55));
+    border:1px solid rgba(127,184,255,.18);
+  }
+  .stat .num{font-size:clamp(34px,4.5vw,46px);font-weight:900;line-height:1;direction:ltr;text-align:right;
+    background:linear-gradient(120deg,#FFFFFF 30%,var(--glow) 100%);-webkit-background-clip:text;background-clip:text;color:transparent}
+  .stat .lbl{margin-top:10px;font-size:15px;font-weight:600;color:var(--ink)}
+  .stat .ctx{margin-top:4px;font-size:13px;color:var(--muted);font-weight:300;line-height:1.4}
+  .stats .src{margin-top:16px;font-size:13px;color:var(--muted);font-weight:300;line-height:1.6}
+  .stats .src a{color:var(--glow);text-decoration:none}
+  .stats .src a:hover{text-decoration:underline}
+
+  @media (max-width:900px){
+    .grid{grid-template-columns:1fr 1fr}
+    .stat-grid{grid-template-columns:1fr 1fr}
+  }
   @media (max-width:640px){
     .grid{grid-template-columns:1fr}
+    .stat-grid{grid-template-columns:1fr 1fr;gap:12px}
+    .stat{padding:18px 16px 14px}
     .hero{min-height:78vh}
     .hero .wrap{padding-top:90px}
   }
@@ -221,7 +256,18 @@
         </div>
         <div class="info">
           <div class="name">DEEPAL S07</div>
-          <p class="desc">קרוסאובר חשמלי — טווח נסיעה 475 ק"מ (WLTP), תאוצה 0-100 קמ"ש ב-7.9 שניות, מסך מולטימדיה 15.6", דירוג בטיחות 5 כוכבים ב-EURO NCAP.</p>
+          <p class="desc">ספינת הדגל: קרוסאובר משפחתי בגודל בינוני (D-SUV), בגרסה אחת מאובזרת עד הסוף — גג פנורמי, ריפודי עור, מושבים מחוממים ומאווררים ומערכת V2L להפעלת מכשירי חשמל מהרכב.</p>
+          <ul class="specs">
+            <li><b>475 ק"מ</b>טווח WLTP · 400–420 במבחן</li>
+            <li><b>80 קוט"ש</b>סוללה, טעינת DC 95 קילוואט</li>
+            <li><b>218 כ"ס</b>הנעה אחורית, 32.6 קג"מ</li>
+            <li><b>7.9 שנ'</b>תאוצה 0-100 קמ"ש</li>
+            <li><b>435 ליטר</b>תא מטען + 125 ליטר מלפנים</li>
+            <li><b>15.6"</b>מסך מגע, גג פנורמי</li>
+            <li><b>5 כוכבים</b>יורו NCAP · 95% הגנה על מבוגרים</li>
+            <li><b>6 שנים</b>אחריות / 150K ק"מ · סוללה 8 שנים</li>
+          </ul>
+          <p class="price">פרימיום טק <b>201,990 ₪</b></p>
           <a class="cta" href="https://wa.me/972545366498?text=%D7%94%D7%99%D7%99%20%D7%A9%D7%99%2C%20%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%AA%D7%90%D7%9D%20%D7%A0%D7%A1%D7%99%D7%A2%D7%AA%20%D7%9E%D7%91%D7%97%D7%9F%20%D7%91-DEEPAL%20S07" target="_blank" rel="noopener">לתיאום נסיעת מבחן ←</a>
         </div>
       </article>
@@ -231,11 +277,74 @@
         </div>
         <div class="info">
           <div class="name">DEEPAL S05 EV</div>
-          <p class="desc">רכב פנאי חשמלי — טווח נסיעה עד 485 ק"מ (WLTP), תאוצה 0-100 קמ"ש ב-7.5 שניות, טעינה מהירה מ-30% ל-80% ב-15 דקות, מסך מולטימדיה 15.4".</p>
+          <p class="desc">הדגם שהפך את דיפאל למותג מוכר בישראל: קרוסאובר קומפקטי (C-SUV) מרווח, על אותה פלטפורמה של ה-S07, במחיר שמתחרה בג'ילי EX5 וב-BYD אטו 3.</p>
+          <ul class="specs">
+            <li><b>485 ק"מ</b>טווח WLTP · 350–400 בפועל</li>
+            <li><b>68.8 קוט"ש</b>סוללה · 30%–80% ב-15 דק'</li>
+            <li><b>272 כ"ס</b>הנעה אחורית, 29.5 קג"מ</li>
+            <li><b>7.3 שנ'</b>תאוצה 0-100 קמ"ש</li>
+            <li><b>492 ליטר</b>תא מטען + 159 ליטר מלפנים</li>
+            <li><b>15.4"</b>מסך מגע, גג זכוכית ב-Max</li>
+            <li><b>8/8</b>בטיחות משרד התחבורה · 5 כוכבי NCAP</li>
+            <li><b>6 שנים</b>אחריות / 150K ק"מ · סוללה 8 שנים</li>
+          </ul>
+          <p class="price">פרו <b>149,990 ₪</b> · מקס <b>159,990 ₪</b> · מקס 4X4 <b>189,990 ₪</b></p>
           <a class="cta" href="https://wa.me/972545366498?text=%D7%94%D7%99%D7%99%20%D7%A9%D7%99%2C%20%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%AA%D7%90%D7%9D%20%D7%A0%D7%A1%D7%99%D7%A2%D7%AA%20%D7%9E%D7%91%D7%97%D7%9F%20%D7%91-DEEPAL%20S05" target="_blank" rel="noopener">לתיאום נסיעת מבחן ←</a>
         </div>
       </article>
+      <article class="car">
+        <span class="badge">חדש · פלאג-אין</span>
+        <div class="frame">
+          <img class="photo" src="assets/deepal-s05.jpg" alt="DEEPAL S05 PHEV" loading="lazy">
+        </div>
+        <div class="info">
+          <div class="name">DEEPAL S05 PHEV</div>
+          <p class="desc">היברידי-נטען: אותו S05 מרווח, עם מנוע בנזין 1.5 טורבו שטוען את הסוללה. נוסעים על חשמל ביום-יום, בלי חרדת טווח בנסיעה ארוכה.</p>
+          <ul class="specs">
+            <li><b>100 ק"מ</b>טווח חשמלי (WLTP)</li>
+            <li><b>~1,000 ק"מ</b>טווח כולל</li>
+            <li><b>259 כ"ס</b>הספק משולב, 29 קג"מ</li>
+            <li><b>7.9 שנ'</b>תאוצה 0-100 קמ"ש</li>
+            <li><b>18.4 קוט"ש</b>סוללת LFP, טעינת DC</li>
+            <li><b>553 ליטר</b>תא מטען</li>
+            <li><b>8/8</b>ציון בטיחות משרד התחבורה</li>
+            <li><b>6 שנים</b>אחריות / 150K ק"מ · סוללה 8 שנים</li>
+          </ul>
+          <p class="price">פרו <b>155,000 ₪</b> · מקס <b>165,000 ₪</b></p>
+          <a class="cta" href="https://wa.me/972545366498?text=%D7%94%D7%99%D7%99%20%D7%A9%D7%99%2C%20%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%AA%D7%90%D7%9D%20%D7%A0%D7%A1%D7%99%D7%A2%D7%AA%20%D7%9E%D7%91%D7%97%D7%9F%20%D7%91-DEEPAL%20S05%20PHEV" target="_blank" rel="noopener">לתיאום נסיעת מבחן ←</a>
+        </div>
+      </article>
     </div>
+  </div>
+</section>
+
+<section class="stats">
+  <div class="wrap">
+    <h2>צאנגאן דיפאל בישראל במספרים</h2>
+    <p class="sub">שנה וחצי אחרי הכניסה לישראל, דיפאל כבר בין ארבעת המותגים החשמליים הנמכרים ביותר — בעיקר בזכות ה-S05.</p>
+    <div class="stat-grid">
+      <div class="stat">
+        <div class="num">2,318</div>
+        <div class="lbl">מסירות ינואר–יולי 2026</div>
+        <div class="ctx">מקום 4 בין 45 מותגי רכב חשמלי בישראל, 9.5% משוק החשמליות</div>
+      </div>
+      <div class="stat">
+        <div class="num">#3</div>
+        <div class="lbl">דיפאל S05 — הדגם החשמלי הנמכר</div>
+        <div class="ctx">1,972 יחידות במחצית הראשונה של 2026, אחרי אקספנג G6 וטסלה מודל Y</div>
+      </div>
+      <div class="stat">
+        <div class="num">#1</div>
+        <div class="lbl">המותג החשמלי הנמכר בינואר 2026</div>
+        <div class="ctx">636 מסירות בחודש אחד, לפני BYD, אקספנג וג'ילי</div>
+      </div>
+      <div class="stat">
+        <div class="num">+436%</div>
+        <div class="lbl">צמיחה שנתית במסירות</div>
+        <div class="ctx">ינואר–פברואר 2026 לעומת התקופה המקבילה ב-2025</div>
+      </div>
+    </div>
+    <p class="src">מקור: נתוני איגוד יבואני הרכב, כפי שפורסמו ב-<a href="https://www.autocom.co.il/66331-2/" target="_blank" rel="noopener">אוטוקום</a>, <a href="https://www.cartube.co.il/%D7%94%D7%9E%D7%92%D7%96%D7%99%D7%9F/%D7%94%D7%A8%D7%9B%D7%91%D7%99%D7%9D-%D7%94%D7%97%D7%A9%D7%9E%D7%9C%D7%99%D7%99%D7%9D-%D7%94%D7%A0%D7%9E%D7%9B%D7%A8%D7%99%D7%9D-%D7%91%D7%99%D7%95%D7%AA%D7%A8-%D7%91%D7%99%D7%A9%D7%A8%D7%90%D7%9C-%D7%9E%D7%97%D7%A6%D7%99%D7%AA-%D7%A8%D7%90%D7%A9%D7%95%D7%A0%D7%94-2026" target="_blank" rel="noopener">קארטיוב</a> ו-<a href="https://www.gear.co.il/%D7%9B%D7%AA%D7%91%D7%AA-%D7%A8%D7%9B%D7%91/2026-05-03-N02-%D7%9E%D7%A1%D7%99%D7%A8%D7%95%D7%AA-%D7%A8%D7%9B%D7%91%D7%99%D7%9D-%D7%97%D7%93%D7%A9%D7%99%D7%9D" target="_blank" rel="noopener">גיר</a>. עדכון אחרון: ספטמבר 2026.</p>
   </div>
 </section>
 
@@ -248,6 +357,12 @@
       <div class="rev-col">
         <div class="model">DEEPAL S07</div>
         <ul class="rev-list">
+          <li><a href="https://www.icar.co.il/test_drive/r1t5oe3gxx/" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+            מבחן דרכים · מה קורה אחרי מאות ק"מ<span class="src">iCar</span></a></li>
+          <li><a href="https://www.auto.co.il/cars/deepal/s07/" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+            מחירון, מפרט טכני ונתוני בטיחות<span class="src">אוטו</span></a></li>
           <li><a href="https://www.auto.co.il/articles/test-drives/road-tests/137799/" target="_blank" rel="noopener">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
             מבחן דרכים מלא<span class="src">אוטו</span></a></li>
@@ -266,6 +381,18 @@
       <div class="rev-col">
         <div class="model">DEEPAL S05</div>
         <ul class="rev-list">
+          <li><a href="https://www.auto.co.il/articles/car-news/local-news/deepal-s05-phev-israel/" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+            S05 PHEV: השקה, מפרט ומחירים<span class="src">אוטו</span></a></li>
+          <li><a href="https://www.automag.co.il/changan-deepal-s05-phev-israel/" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+            S05 PHEV: סקירת הגרסה הנטענת<span class="src">אוטומג</span></a></li>
+          <li><a href="https://www.auto.co.il/cars/deepal/s05/" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+            מחירון, מפרט טכני ונתוני בטיחות<span class="src">אוטו</span></a></li>
+          <li><a href="https://www.evm.co.il/deepal-s05-in-israel/" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+            עלויות טעינה וחיסכון מול רכב בנזין<span class="src">EV Magazine</span></a></li>
           <li><a href="https://www.auto.co.il/articles/test-drives/road-tests/deepal-s05/" target="_blank" rel="noopener">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
             מבחן דרכים מלא<span class="src">אוטו</span></a></li>
