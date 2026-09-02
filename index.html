@@ -111,8 +111,6 @@
   .car .specs{list-style:none;margin-top:12px;display:grid;grid-template-columns:1fr 1fr;gap:6px 12px}
   .car .specs li{font-size:13px;color:var(--muted);font-weight:300;line-height:1.35}
   .car .specs b{display:block;color:var(--ink);font-weight:600;font-size:15px;direction:ltr;text-align:right;unicode-bidi:isolate}
-  .car .price{margin-top:12px;font-size:14px;color:#C6D8F5}
-  .car .price b{color:var(--glow);font-weight:600}
   .car{
     position:relative;border-radius:20px;overflow:hidden;
     background:linear-gradient(170deg,var(--panel),#0A1E44);
@@ -180,6 +178,27 @@
   footer svg{width:17px;height:17px;flex:none;color:var(--glow)}
   .rule{height:1px;background:linear-gradient(90deg,rgba(127,184,255,.35),transparent);margin-bottom:22px}
 
+  /* ===== leasing ===== */
+  .lease{padding:46px 0 10px}
+  .lease h2{font-size:15px;font-weight:600;color:var(--glow);letter-spacing:.08em;margin-bottom:6px}
+  .lease .sub{color:var(--muted);font-size:15px;font-weight:300;margin-bottom:20px;max-width:60ch}
+  .lease-card{
+    border-radius:22px;padding:26px 26px 24px;
+    background:linear-gradient(150deg,rgba(46,124,246,.16),rgba(10,30,68,.6));
+    border:1px solid rgba(127,184,255,.28);
+  }
+  .lease-head{display:flex;flex-wrap:wrap;align-items:baseline;gap:10px;padding-bottom:18px;border-bottom:1px solid rgba(127,184,255,.18)}
+  .lease-head .big{font-size:clamp(30px,4.4vw,42px);font-weight:900;line-height:1;direction:ltr;
+    background:linear-gradient(120deg,#FFFFFF 30%,var(--glow) 100%);-webkit-background-clip:text;background-clip:text;color:transparent}
+  .lease-head .cap{color:#C6D8F5;font-size:16px;font-weight:600}
+  .lease-head .note{color:var(--muted);font-size:14px;font-weight:300;margin-inline-start:auto}
+  .lease-list{list-style:none;display:grid;grid-template-columns:1fr 1fr;gap:14px 26px;margin-top:20px}
+  .lease-list li{display:flex;align-items:flex-start;gap:10px;font-size:15px;color:#C6D8F5;line-height:1.45}
+  .lease-list svg{width:19px;height:19px;flex:none;color:var(--glow);margin-top:2px}
+  .lease-list b{color:var(--ink);font-weight:600}
+  .lease .foot{margin-top:22px;display:flex;flex-wrap:wrap;align-items:center;gap:14px}
+  .lease .fine{color:var(--muted);font-size:13px;font-weight:300;line-height:1.5;max-width:52ch}
+
   /* ===== stats ===== */
   .stats{padding:44px 0 10px}
   .stats h2{font-size:15px;font-weight:600;color:var(--glow);letter-spacing:.08em;margin-bottom:6px}
@@ -200,6 +219,7 @@
 
   @media (max-width:900px){
     .grid{grid-template-columns:1fr 1fr}
+    .lease-list{grid-template-columns:1fr}
     .stat-grid{grid-template-columns:1fr 1fr}
   }
   @media (max-width:640px){
@@ -267,7 +287,6 @@
             <li><b>5 כוכבים</b>יורו NCAP · 95% הגנה על מבוגרים</li>
             <li><b>6 שנים</b>אחריות / 150K ק"מ · סוללה 8 שנים</li>
           </ul>
-          <p class="price">פרימיום טק <b>201,990 ₪</b></p>
           <a class="cta" href="https://wa.me/972545366498?text=%D7%94%D7%99%D7%99%20%D7%A9%D7%99%2C%20%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%AA%D7%90%D7%9D%20%D7%A0%D7%A1%D7%99%D7%A2%D7%AA%20%D7%9E%D7%91%D7%97%D7%9F%20%D7%91-DEEPAL%20S07" target="_blank" rel="noopener">לתיאום נסיעת מבחן ←</a>
         </div>
       </article>
@@ -288,7 +307,6 @@
             <li><b>8/8</b>בטיחות משרד התחבורה · 5 כוכבי NCAP</li>
             <li><b>6 שנים</b>אחריות / 150K ק"מ · סוללה 8 שנים</li>
           </ul>
-          <p class="price">פרו <b>149,990 ₪</b> · מקס <b>159,990 ₪</b> · מקס 4X4 <b>189,990 ₪</b></p>
           <a class="cta" href="https://wa.me/972545366498?text=%D7%94%D7%99%D7%99%20%D7%A9%D7%99%2C%20%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%AA%D7%90%D7%9D%20%D7%A0%D7%A1%D7%99%D7%A2%D7%AA%20%D7%9E%D7%91%D7%97%D7%9F%20%D7%91-DEEPAL%20S05" target="_blank" rel="noopener">לתיאום נסיעת מבחן ←</a>
         </div>
       </article>
@@ -310,10 +328,41 @@
             <li><b>8/8</b>ציון בטיחות משרד התחבורה</li>
             <li><b>6 שנים</b>אחריות / 150K ק"מ · סוללה 8 שנים</li>
           </ul>
-          <p class="price">פרו <b>155,000 ₪</b> · מקס <b>165,000 ₪</b></p>
           <a class="cta" href="https://wa.me/972545366498?text=%D7%94%D7%99%D7%99%20%D7%A9%D7%99%2C%20%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%AA%D7%90%D7%9D%20%D7%A0%D7%A1%D7%99%D7%A2%D7%AA%20%D7%9E%D7%91%D7%97%D7%9F%20%D7%91-DEEPAL%20S05%20PHEV" target="_blank" rel="noopener">לתיאום נסיעת מבחן ←</a>
         </div>
       </article>
+    </div>
+  </div>
+</section>
+
+<section class="lease">
+  <div class="wrap">
+    <h2>ליסינג פרטי</h2>
+    <p class="sub">רוצים את הרכב בלי לקנות אותו? מסלול ליסינג עם תשלום חודשי קבוע שכולל כמעט הכל — אתם רק מתדלקים חשמל ונוסעים.</p>
+
+    <div class="lease-card">
+      <div class="lease-head">
+        <span class="big">7,900 ₪</span>
+        <span class="cap">מקדמה מינימלית</span>
+        <span class="note">ההחזר החודשי נקבע לפי הדגם, תקופת ההתקשרות והנסועה</span>
+      </div>
+
+      <ul class="lease-list">
+      <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span><b>עד 25,000 ק"מ בשנה</b> — מכסת נסועה גבוהה, מתאימה גם לנסיעות עבודה יומיות</span></li>
+      <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span><b>טיפולים כלולים</b> — כל הטיפולים התקופתיים במוסך המורשה, על חשבון החברה</span></li>
+      <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span><b>ביטול השתתפות עצמית</b> — במקרה תאונה אתם לא משלמים את ההשתתפות העצמית</span></li>
+      <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span><b>רכב חלופי</b> — נשארים ניידים גם כשהרכב במוסך או אחרי תאונה</span></li>
+      <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span><b>נהג חדש מאושר</b> — גם נהגים חדשים וצעירים יכולים להיכלל בפוליסה</span></li>
+      <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span><b>רכב חדש מהניילון</b> — ישר מהאולם, עם אחריות יצרן מלאה לאורך כל התקופה</span></li>
+      </ul>
+
+      <div class="foot">
+        <a class="btn primary" href="https://wa.me/972545366498?text=%D7%94%D7%99%D7%99%20%D7%A9%D7%99%2C%20%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%A7%D7%91%D7%9C%20%D7%94%D7%A6%D7%A2%D7%AA%20%D7%9C%D7%99%D7%A1%D7%99%D7%A0%D7%92" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="M9 15h6"/></svg>
+          לקבלת הצעת ליסינג
+        </a>
+        <p class="fine">ההצעה כפופה לאישור חברת הליסינג ולתנאי ההתקשרות המלאים. אשמח לבנות אתכם מסלול לפי הנסועה והתקציב.</p>
+      </div>
     </div>
   </div>
 </section>
