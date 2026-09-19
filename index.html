@@ -493,21 +493,25 @@
 (function(){
   var el = document.getElementById('visit-counter');
   var num = document.getElementById('visit-count');
-  // סופרים ביקור אחד לכל מבקר ביום (לא כל רענון)
-  var today = new Date().toISOString().slice(0,10);
-  var counted = localStorage.getItem('sbc-visit') === today;
-  var url = 'https://api.counterapi.dev/v1/shaibcard-haifa/visits/' + (counted ? '' : 'up');
+
+  // כל כניסה לאתר נספרת כביקור חדש
+  var url = 'https://api.counterapi.dev/v1/shaibcard-haifa/visits/up';
+
   fetch(url)
     .then(function(r){ return r.json(); })
     .then(function(d){
       var c = d.count != null ? d.count : (d.data && d.data.count);
+
       if (c == null) return;
+
       num.textContent = Number(c).toLocaleString('he-IL');
       el.hidden = false;
-      if (!counted) localStorage.setItem('sbc-visit', today);
     })
-    .catch(function(){ /* אם השירות לא זמין — פשוט לא מציגים */ });
+    .catch(function(){
+      // אם השירות לא זמין — פשוט לא מציגים את המונה
+    });
 })();
+
 </script>
 
 </body>
